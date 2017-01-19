@@ -35,6 +35,7 @@ services:
     depends_on:
       - mysql
 
+<<<<<<< Updated upstream
   # hic-manager:
   #   image: bkjeholt/mqtt-manager:latest-x86
   #   restart: always
@@ -45,6 +46,19 @@ services:
   #     - db
   #     - db-setup
   #     - mqtt
+=======
+  hic-manager:
+    image: bkjeholt/mqtt-manager:latest-x86
+    restart: always
+    links:
+      - db:mysql
+    environment:
+      - MQTT_IP_ADDR=192.168.1.10
+      - MQTT_PORT_NO=1883
+    depends_on:
+      - db
+      - db-setup
+>>>>>>> Stashed changes
 
 volumes:
   mysql-data-vol: {}
