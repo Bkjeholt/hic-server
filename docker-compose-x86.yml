@@ -14,10 +14,10 @@
 version: '2'
 
 services:
-  db:
+  mysql:
     image: mysql:latest
     volumes:
-      - db-data-vol:/var/lib/mysql
+      - mysql-data-vol:/var/lib/mysql
     restart: always
     ports:
       - "3306:3306"
@@ -27,13 +27,13 @@ services:
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=asfRA-456RfGH-TrY67GhjF
 
-  db-setup:
+  mysql-setup:
     image: bkjeholt/mysql-setup:1.1.1-x86
     restart: 'no'
     links: 
-      - db:mysql
+      - mysql:mysql
     depends_on:
-      - db
+      - mysql
 
   # hic-manager:
   #   image: bkjeholt/mqtt-manager:latest-x86
@@ -47,4 +47,4 @@ services:
   #     - mqtt
 
 volumes:
-  db-data-vol: {}
+  mysql-data-vol: {}
