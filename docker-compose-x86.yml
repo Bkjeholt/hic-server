@@ -20,7 +20,7 @@ services:
       - db-data-vol:/var/lib/mysql
     restart: always
     ports:
-      - "13306:3306"
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=Rft5-667g-3drTR-44DFv
       - MYSQL_DATABASE=hic
@@ -35,16 +35,16 @@ services:
     depends_on:
       - db
 
-  hic-manager:
-    image: bkjeholt/mqtt-manager:latest-x86
-    restart: always
-    links:
-      - db:mysql
-      - mqtt:mqtt
-    depends_on:
-      - db
-      - db-setup
-      - mqtt
+  # hic-manager:
+  #   image: bkjeholt/mqtt-manager:latest-x86
+  #   restart: always
+  #   links:
+  #     - db:mysql
+  #     - mqtt:mqtt
+  #   depends_on:
+  #     - db
+  #     - db-setup
+  #     - mqtt
 
 volumes:
   db-data-vol: {}
