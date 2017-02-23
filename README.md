@@ -1,7 +1,22 @@
 # hic-server
 ## Introduction
+To execute this, the following files needs to be copied to an unique directory:
+``` 
+ .env
+ docker-compose-rpi.yml
+ docker-compose-x64.yml
+```
+Rename applicable one of these ``` docker-compose-XXX.yml ``` files according to below.
+``` 
+mv docker-compose-rpi.yml docker-compose.yml
+```
+or 
+``` 
+mv docker-compose-x86.yml docker-compose.yml
+```
 
-## docker-compose command
+## run command
+To start this server with the included services. Write the following command:
 ``` 
 docker-compose up -d
 ```
@@ -39,4 +54,5 @@ FTP_BACKUP_INTERVALL=12 | The timeintervall (in hours) between every backup atte
  | | 
  DEBUG | This will activate debug printouts in adapted containers | DEBUG=0
 
-
+## Container names
+The container names will be automatically generated, based on the parent directory name and the names given in the ``` docker-compose.yml ``` file
