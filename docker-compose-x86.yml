@@ -51,5 +51,23 @@ services:
       DOCKER_CONTAINER_NAME: hic-manager
       DEBUG: ${DEBUG}
 
+  ftp-backup:
+    image: bkjeholt/mysql-backup-ftp:latest-x86
+    depends_on:
+      - mysql
+    restart: always
+    links:
+      - mysql:mysql
+    environment:
+      FTP_HOST_ADDR: ${FTP_HOST}
+      FTP_USER_NAME: ${FTP_USER}
+      FTP_PASSWORD: ${FTP_PASSWORD}
+      FTP_BACKUP_BASE_DIR: ${FTP_BACKUP_BASE_DIR}
+      MYSQL_BACKUP_INTERVALL: ${FTP_BACKUP_INTERVALL}
+      MYSQL_PORT_3306_TCP_ADDR: mysql
+      MYSQL_PORT_3306_TCP_PORT: 3306
+      MYSQL_ENV_MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ENV_MYSQL_DATABASE: db
+      
 volumes:
   mysql_data: 
