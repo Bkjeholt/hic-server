@@ -49,6 +49,7 @@ services:
       MQTT_IP_ADDR: ${MQTT_IP_ADDR}
       MQTT_PORT_NO: ${MQTT_PORT_NO}
       DOCKER_CONTAINER_NAME: hic-manager
+      DEBUG: ${DEBUG}
 
 volumes:
   mysql_data: 
