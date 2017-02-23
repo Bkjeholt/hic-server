@@ -25,8 +25,10 @@ FTP_BACKUP_INTERVALL=12
 Environment variable | Description | Example
 ---------------------------|----------------|--------------------------------------------------
 MYSQL_ROOT_PASSWORD | The root password chosen at creation of the mysql container | MYSQL_ROOT_PASSWORD=RgT4De3%rTTge35yY7 
+ | | 
 MQTT_IP_ADDR | The adress to the MQTT broker | MQTT_IP_ADDR=192.168.1.10
 MQTT_PORT_NO | Port number used by the MQTT broker | MQTT_PORT_NO=1883
+ | | 
 PMA_PORT_NO | Port number used for external access of phpmyadmin | PMA_PORT_NO=8080
  | | 
 FTP_HOST | Ethernet address to the FTP-server | FTP_HOST="ftp-server.com"
@@ -34,16 +36,7 @@ FTP_USER | FTP-server user name | FTP_USER="db_user"
 FTP_PASSWORD | FTP-server password | FTP_PASSWORD="Ft54RfeDFrG45-R45Df"
 FTP_BACKUP_BASE_DIR | Path to the backup-archive within the ftp-server | FTP_BACKUP_BASE_DIR="Backup/"
 FTP_BACKUP_INTERVALL=12 | The timeintervall (in hours) between every backup attempt | FTP_BACKUP_INTERVALL=12
+ | | 
+ DEBUG | This will activate debug printouts in adapted containers | DEBUG=0
 
 
-### Mysql linking
-
-## Docker image
-
-There are two variants of docker images on the https://hub.docker.com/bkjeholt/mysql-backup-ftp . 
-One compilation for standard x86 based systems and one for RaspberryPi and probably other Arm-based systems as well.
-
-## Docker image tag
-
-The tag consist of a couple of fields
-## Docker container name
