@@ -4,7 +4,7 @@ To execute this, the following files needs to be copied to an unique directory:
 ``` 
  .env
  docker-compose-rpi.yml
- docker-compose-x64.yml
+ docker-compose-x86.yml
 ```
 Rename applicable one of these ``` docker-compose-XXX.yml ``` files according to below.
 ``` 
@@ -29,12 +29,12 @@ MYSQL_ROOT_PASSWORD=RgT4De3%rTTge35yY7
 MQTT_IP_ADDR=192.168.1.10
 MQTT_PORT_NO=1883
 PMA_PORT_NO=18085
-DEBUG=0
 FTP_HOST=ftp-server-com
 FTP_USER=bamse
 FTP_PASSWORD=ErFRtg54r-rtTGe4JklP
 FTP_BACKUP_BASE_DIR=Backup
 FTP_BACKUP_INTERVALL=12
+DEBUG=0
 ```
 ## Environment variables
 Environment variable | Description | Example
